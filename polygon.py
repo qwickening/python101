@@ -40,10 +40,18 @@ def arc(t, r, angle):
 def circle(t, r):
     arc(t, r, 360)
 
-def flower1(t, r):
-    arc(t, r, 500)
+def petal(t, r, angle):
+    for i in range(2):
+        arc(t, r, angle)
+        t.lt(180-angle)
 
+def flower(t, n, r, angle):
+    for i in range(n):
+        petal(t, r, angle)
+        t.lt(360.0/n)
+        
 if __name__ == '__main__':
+    # I hate that the turtle has a human name
     bob = turtle.Turtle()
 
     radius = 100
@@ -51,9 +59,7 @@ if __name__ == '__main__':
     bob.fd(radius)
     bob.lt(90)
     bob.pd()
-    #circle(bob, radius)
-    flower1(bob,radius)
-
+    flower(bob, 10, 40.0, 80.0)
     turtle.mainloop()
 
 
