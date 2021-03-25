@@ -40,6 +40,8 @@ def arc(t, r, angle):
 def circle(t, r):
     arc(t, r, 360)
 
+def flower1(t, r):
+    arc(t, r, 500)
 
 if __name__ == '__main__':
     bob = turtle.Turtle()
@@ -49,7 +51,8 @@ if __name__ == '__main__':
     bob.fd(radius)
     bob.lt(90)
     bob.pd()
-    circle(bob, radius)
+    #circle(bob, radius)
+    flower1(bob,radius)
 
     turtle.mainloop()
 
